@@ -105,3 +105,38 @@ def plot_clv_boxplot(clv_data):
     # Save the plot
     plt.savefig('outputs/eda_visualizations/clv_boxplot_by_segment.png')
     plt.show()
+
+def plot_purchase_trends(daily_simulation_file):
+    """
+    Plot total predicted purchases per day and cumulative purchases over time using actual simulated events.
+
+    Parameters:
+        daily_simulation_file (str): Path to the iterative daily purchase simulation results CSV.
+    """
+    # Load daily simulation results
+    daily_purchases_df = pd.read_csv(daily_simulation_file)
+
+    # Aggregate total purchases per day across all simulations and customers
+    daily_trends = daily_purchases_df.groupby('Day')['PurchasesToday'].sum().reset_index()
+
+    # Plot total predicted purchases per day
+    plt.figure(figsize=(12, 6))
+    plt.plot(daily_trends['Day'], daily_trends['PurchasesToday'], marker='o', linestyle='-', color='blue')
+    plt.title('Total Predicted Purchases per Day Over 180 Days')
+    plt.xlabel('Day')
+    plt.ylabel('Number of Purchases')
+    plt.grid(True)
+    plt.savefig('outputs/eda_visualizations/daily_purchase_trends_actual.png')
+    plt.show()
+
+    # Plot cumulative purchases over time
+    daily_trends['CumulativePurchases'] = daily_trends['PurchasesToday'].cumsum()
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(daily_trends['Day'], daily_trends['CumulativePurchases'], marker='o', linestyle='-', color='green')
+    plt.title('Cumulative Predicted Purchases Over 180 Days')
+    plt.xlabel('Day')
+    plt.ylabel('Cumulative Purchases')
+    plt.grid(True)
+    plt.savefig('outputs/eda_visualizations/cumulative_purchase_trends_actual.png')
+    plt.show()

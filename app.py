@@ -6,6 +6,8 @@ from models.train_model import train_bgnbd_model
 from models.evaluate_model import evaluate_model
 from models.monte_carlo_sim import monte_carlo_simulation
 from analysis.customer_value_analysis import calculate_clv, plot_customer_segments, plot_clv_boxplot, plot_clv_separate_boxplots
+from analysis.customer_value_analysis import plot_purchase_trends
+
 
 def main():
     # Load Transaction Data
@@ -50,6 +52,9 @@ def main():
 
     # Plot Separate CLV Boxplots for Each Segment
     plot_clv_separate_boxplots(clv_data)
+
+    # Plot actual daily purchase trends
+    plot_purchase_trends('outputs/iterative_purchase_simulations.csv')
 
 if __name__ == '__main__':
     main()
