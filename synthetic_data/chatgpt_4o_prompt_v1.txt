@@ -1,0 +1,9 @@
+Generate a synthetic dataset of customer transactions for 1,000 customers over a 2-year period (730 days). Each customer should have between 0 to 50 purchase events, with variability in purchasing behavior:
+
+Some customers are frequent buyers (e.g., weekly or monthly purchases), while others purchase infrequently or churn after initial transactions.
+Each transaction should have the following columns:
+CustomerID (unique identifier from 1 to 1000)
+PurchaseDate (random dates over 2 years, reflecting realistic purchase intervals)
+MonetaryValue (random amount between $10 to $500 per purchase)
+Ensure that some customers churn after a certain number of purchases, and others remain active throughout the period.
+Include variability in purchase intervals using a Poisson distribution for frequency and a Beta distribution for churn probability to mimic real-world behaviors.
