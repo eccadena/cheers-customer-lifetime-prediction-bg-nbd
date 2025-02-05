@@ -1,6 +1,6 @@
 # Customer Lifetime Value Analysis with BG/NBD Model
 
-This project focuses on **predicting customer purchasing behavior** and estimating **Customer Lifetime Value (CLV)** using the **BG/NBD model**. The analysis includes **exploratory data analysis (EDA)**, **model training**, **Monte Carlo simulations**, and **segmentation insights**.
+This project focuses on **predicting customer purchasing behavior** and estimating **Customer Lifetime Value (CLV)** using the **BG/NBD model**. The analysis includes **exploratory data analysis (EDA)**, **model training**, **Monte Carlo simulations**, and **segmentation insights**. Please note this is an attempt to review and polish data science skills, not an attempt to do a full scale, accurate analysis of real world data (this is synthetic data). Thanks for viewing!
 
 ---
 
